@@ -234,6 +234,35 @@
         font-weight: 900;
       }
 
+      .case-brief {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 8px;
+      }
+
+      .case-brief__item {
+        display: grid;
+        gap: 5px;
+        min-height: 86px;
+        align-content: start;
+        padding: 10px;
+        border: 2px solid var(--ink);
+        background: var(--paper-cool);
+      }
+
+      .case-brief__item b {
+        font-size: 12px;
+        font-weight: 900;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .case-brief__item span {
+        font-size: 13px;
+        font-weight: 800;
+        line-height: 1.24;
+      }
+
       .case-process {
         display: grid;
         grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -1077,7 +1106,6 @@
         height: clamp(96px, 9vw, 128px);
         object-fit: cover;
         object-position: center;
-        transform: scale(1.34);
         background: #7a1018;
       }
 
@@ -1162,6 +1190,14 @@
         font-weight: 900;
         letter-spacing: 0.08em;
         text-transform: uppercase;
+      }
+
+      .anchor-alias {
+        position: relative;
+        display: block;
+        height: 0;
+        overflow: hidden;
+        scroll-margin-top: 110px;
       }
 
       #experience,
@@ -1273,6 +1309,7 @@
         }
 
         .case-process,
+        .case-brief,
         .case-preview-grid,
         .asset-grid--story,
         .asset-grid--keyframes,
@@ -1317,10 +1354,43 @@
         .case-video-strip {
           grid-template-columns: 1fr;
         }
+
+        .benben-case .asset-bottom-row {
+          grid-template-columns: 1fr;
+          align-items: start;
+        }
+
+        .asset-group--keyframes {
+          grid-template-rows: auto auto;
+        }
+
+        .asset-group--keyframes .asset-grid--keyframes {
+          height: auto;
+        }
+
+        .asset-bottom-row .asset-group--video,
+        .benben-case .asset-group--video {
+          grid-template-rows: auto auto;
+        }
+
+        .asset-bottom-row .asset-group--video .case-video-strip,
+        .benben-case .asset-group--video .case-video-strip {
+          height: auto;
+          grid-template-rows: auto auto;
+        }
+
+        .asset-bottom-row .asset-group--video .case-video-strip video,
+        .benben-case .asset-group--video .case-video-strip video,
+        .curated-case--hero .case-video-strip video {
+          height: auto;
+          min-height: 0;
+          max-height: 70vh;
+        }
       }
 
       @media (max-width: 520px) {
         .case-process,
+        .case-brief,
         .case-preview-grid,
         .asset-grid--story,
         .asset-grid--keyframes,
@@ -1343,6 +1413,22 @@
             "soldier"
             "raider"
             "resource";
+        }
+
+        #skills .skills-board {
+          grid-template-columns: 1fr;
+        }
+
+        .asset-grid--keyframes,
+        .benben-case .asset-grid--keyframes {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        #skills .skill-group h3 {
+          white-space: normal;
+          text-align: left;
+          font-size: 28px;
+          line-height: 1.05;
         }
 
         .case-media__hero figcaption {
@@ -1421,6 +1507,11 @@
                   <h3 class="case-title">Frozen Wasteland<span>冰雪生存 SLG 游戏买量广告素材</span></h3>
                   <p class="case-intro">AIGC 游戏广告买量素材案例，覆盖创意策划、分镜脚本、关键帧设计、AI 视频生成、剪辑复盘、旁白字幕设计和素材迭代问题处理。</p>
                   <div class="case-tags">${tagMarkup(tags01)}</div>
+                  <div class="case-brief" aria-label="Case summary">
+                    <div class="case-brief__item"><b>项目目标</b><span>用 22s 竖屏素材验证冰雪生存 SLG 的开局钩子、建造反馈和冲突升级节奏。</span></div>
+                    <div class="case-brief__item"><b>我的工作</b><span>负责创意方向、分镜脚本、关键帧、AI 视频生成、剪辑包装、字幕旁白和版本复盘。</span></div>
+                    <div class="case-brief__item"><b>复盘说明</b><span>围绕前三秒吸引、资源建设可读性、结尾悬念和素材交付完整度做迭代。</span></div>
+                  </div>
                   <div class="case-process" aria-label="Production process">
                     <span>创意策划<br>Hook & Rhythm</span>
                     <span>分镜脚本<br>Storyboard</span>
@@ -1470,7 +1561,7 @@
                       <div class="asset-group asset-group--video">
                         <div class="asset-group__title"><span>成品视频</span><span>Final Video</span></div>
                         <div class="case-video-strip">
-                          <video controls preload="metadata" poster="portfolio/frozen-wasteland/collection.png" src="portfolio/frozen-wasteland/final-video.mp4"></video>
+                          <video controls muted playsinline preload="metadata" poster="portfolio/frozen-wasteland/collection.png" src="portfolio/frozen-wasteland/final-video.mp4"></video>
                           <div>
                             <strong>Final Video</strong>
                             <p>22s 竖屏买量广告成片，聚焦开局钩子、资源建造、冲突爆发、成长反馈和结尾悬念。</p>
@@ -1497,6 +1588,11 @@
                     <h3 class="case-title">Kingdom Concept SLG<span>王国 SLG 游戏买量广告素材</span></h3>
                     <p class="case-intro">这支买量广告素材围绕中世纪王国从被掠夺、追击敌方、夺回资源到建造王城的成长链路展开，重点展示世界观设定、阵营角色、资源道具、关键帧叙事和竖屏成片交付。</p>
                     <div class="case-tags">${tagMarkup(tags02)}</div>
+                    <div class="case-brief" aria-label="Case summary">
+                      <div class="case-brief__item"><b>项目目标</b><span>用 32s 竖屏广告呈现敌袭、追回资源、城防升级到王国繁荣的 SLG 成长链路。</span></div>
+                      <div class="case-brief__item"><b>我的工作</b><span>负责设定图、关键帧序列、视频生成、成片包装和可用于买量展示的素材整理。</span></div>
+                      <div class="case-brief__item"><b>复盘说明</b><span>重点检查剧情转折、阵营识别、王城升级反馈和最终繁荣画面的转化表达。</span></div>
+                    </div>
 
                     <div class="case-asset-wall" id="benben-case-media">
                       <div class="asset-top-row">
@@ -1540,7 +1636,7 @@
                         <div class="asset-group asset-group--video">
                           <div class="asset-group__title"><span>成品视频</span><span>Final Video</span></div>
                           <div class="case-video-strip">
-                            <video controls preload="metadata" poster="assets/works/benben-slg/keyframe-10.png" src="assets/works/benben-slg/final-video.mp4"></video>
+                            <video controls muted playsinline preload="metadata" poster="assets/works/benben-slg/keyframe-10.png" src="assets/works/benben-slg/final-video.mp4"></video>
                             <div>
                               <strong>Final Video</strong>
                               <p>32s 竖屏 SLG 买量广告成片，聚焦敌人掠夺、资源追回、城防升级、王国扩张和最终繁荣的成长反馈。</p>
@@ -1714,6 +1810,14 @@
 
           const profile = document.querySelector("#profile");
           if (profile) {
+            if (!document.querySelector("#about")) {
+              const aboutAlias = document.createElement("span");
+              aboutAlias.id = "about";
+              aboutAlias.className = "anchor-alias";
+              aboutAlias.setAttribute("aria-hidden", "true");
+              profile.prepend(aboutAlias);
+            }
+
             const heading = profile.querySelector(".section-heading h2");
             if (heading) heading.textContent = "个人档案 / Profile";
 
@@ -1794,7 +1898,7 @@
                 <span class="brand-text">ARCHIVE</span>
               </a>
               <nav class="nav-links" aria-label="页面导航">
-                <a class="nav-link" href="#profile"><span>个人档案</span></a>
+                <a class="nav-link" href="#about"><span>个人档案</span></a>
                 <a class="nav-link" href="#works"><span>作品集</span></a>
                 <a class="nav-link" href="#contact"><span>联系方式</span></a>
                 <a class="nav-link nav-link--resume" href="resume.pdf"><span>简历</span></a>
@@ -1802,6 +1906,7 @@
             </header>
             <main>
               <section class="section section--profile" id="profile">
+                <span id="about" class="anchor-alias" aria-hidden="true"></span>
                 <div class="section-heading">
                   <span class="section-number">01</span>
                   <h2>个人档案 / Profile</h2>
