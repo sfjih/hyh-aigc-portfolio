@@ -1,0 +1,1865 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      if (
+        window.location.protocol === "file:" &&
+        !window.location.pathname.replace(/\\/g, "/").includes("/dist/")
+      ) {
+        window.location.replace("./dist/index.html");
+      }
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="何宇航的 AI 游戏广告素材设计简历档案，展示 AIGC 买量素材、AI 视频、关键帧和内容执行经验。"
+    />
+    <title>何宇航｜AI 游戏广告素材设计作品集 / AI Game Ad Portfolio</title>
+    <script defer src="./assets/index-DcNFQIA8.js?v=20260610-1848"></script>
+    <link rel="stylesheet" href="./assets/index-BdsLOe06.css?v=20260610-1848">
+    <style>
+      .works-curated {
+        display: grid;
+        gap: clamp(28px, 5vw, 68px);
+      }
+
+      .works-map {
+        display: grid;
+        grid-template-columns: minmax(0, 0.72fr) minmax(280px, 0.5fr);
+        gap: 18px;
+        align-items: stretch;
+        margin-top: 22px;
+      }
+
+      .works-map__category {
+        position: relative;
+        display: grid;
+        gap: 14px;
+        padding: clamp(16px, 3vw, 28px);
+        border: 3px solid var(--ink);
+        border-radius: var(--radius);
+        background: var(--paper);
+        box-shadow: 9px 9px 0 var(--ink);
+      }
+
+      .works-map__category:first-child {
+        background: var(--archive-yellow);
+      }
+
+      .works-map__category span,
+      .case-status,
+      .case-label,
+      .case-meta,
+      .case-process span,
+      .commercial-category span {
+        font-size: 12px;
+        font-weight: 900;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .works-map__category h3 {
+        margin: 0;
+        font-family: var(--display);
+        font-size: clamp(34px, 5vw, 68px);
+        line-height: 0.88;
+        text-transform: uppercase;
+      }
+
+      .works-map__category ol {
+        display: grid;
+        gap: 9px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .works-map__category li {
+        display: grid;
+        grid-template-columns: 42px minmax(0, 1fr) auto;
+        gap: 10px;
+        align-items: center;
+        padding: 10px;
+        border: 2px solid var(--ink);
+        background: rgba(247, 246, 238, 0.72);
+        font-weight: 900;
+      }
+
+      .works-map__category b {
+        display: grid;
+        width: 34px;
+        height: 34px;
+        place-items: center;
+        border: 2px solid currentColor;
+        border-radius: 50%;
+      }
+
+      .works-map__category em {
+        justify-self: end;
+        font-style: normal;
+        white-space: nowrap;
+      }
+
+      .curated-case {
+        display: grid;
+        gap: 18px;
+      }
+
+      .curated-case--hero {
+        position: relative;
+        grid-template-columns: 1fr;
+        align-items: stretch;
+        padding: clamp(18px, 3.4vw, 34px);
+        border: 4px solid var(--ink);
+        border-radius: var(--radius);
+        background:
+          linear-gradient(90deg, rgba(33, 33, 33, 0.06) 1px, transparent 1px),
+          var(--paper);
+        background-size: 18px 100%, auto;
+        box-shadow: 16px 16px 0 var(--ink);
+      }
+
+      .curated-case--hero::before {
+        content: "AIGC GAME ADS / PRIMARY CASE";
+        position: absolute;
+        top: -32px;
+        left: 28px;
+        padding: 7px 14px 8px;
+        border: 3px solid var(--ink);
+        border-bottom: 0;
+        border-radius: 8px 8px 0 0;
+        background: var(--archive-yellow);
+        font-size: 12px;
+        font-weight: 900;
+        letter-spacing: 0.08em;
+      }
+
+      .curated-case--feature {
+        position: relative;
+        grid-template-columns: 1fr;
+        align-items: stretch;
+        padding: clamp(18px, 3.4vw, 34px);
+        border: 4px solid var(--ink);
+        border-radius: var(--radius);
+        background: var(--paper-cool);
+        box-shadow: 10px 10px 0 var(--ink);
+      }
+
+      .curated-case--feature::before {
+        content: "AIGC GAME ADS / SECOND CASE";
+        position: absolute;
+        top: -32px;
+        left: 28px;
+        padding: 7px 14px 8px;
+        border: 3px solid var(--ink);
+        border-bottom: 0;
+        border-radius: 8px 8px 0 0;
+        background: var(--archive-yellow);
+        font-size: 12px;
+        font-weight: 900;
+        letter-spacing: 0.08em;
+      }
+
+      .case-copy {
+        display: grid;
+        min-width: 0;
+        gap: 18px;
+      }
+
+      .case-topline {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 9px;
+        align-items: center;
+      }
+
+      .case-status,
+      .case-label {
+        display: inline-flex;
+        min-height: 32px;
+        align-items: center;
+        padding: 0 11px;
+        border: 2px solid var(--ink);
+        background: var(--ink);
+        color: var(--archive-yellow);
+      }
+
+      .case-label {
+        background: var(--paper-cool);
+        color: var(--ink);
+      }
+
+      .case-title {
+        margin: 0;
+        font-family: var(--display);
+        font-size: clamp(54px, 8vw, 116px);
+        line-height: 0.84;
+        text-transform: uppercase;
+      }
+
+      .case-title span {
+        display: block;
+        margin-top: 10px;
+        font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans SC", sans-serif;
+        font-size: clamp(23px, 3vw, 42px);
+        line-height: 1.03;
+        text-transform: none;
+      }
+
+      .case-intro {
+        max-width: 66ch;
+        margin: 0;
+        color: var(--ink-soft);
+        font-size: clamp(17px, 1.8vw, 23px);
+        font-weight: 800;
+        line-height: 1.24;
+      }
+
+      .case-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .case-tags span {
+        display: inline-flex;
+        min-height: 34px;
+        align-items: center;
+        padding: 0 10px;
+        border: 2px solid var(--ink);
+        border-radius: 999px;
+        background: var(--archive-yellow);
+        font-size: 13px;
+        font-weight: 900;
+      }
+
+      .case-process {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 8px;
+      }
+
+      .case-process span {
+        display: grid;
+        min-height: 64px;
+        align-content: center;
+        padding: 8px;
+        border: 2px solid var(--ink);
+        background: rgba(233, 238, 240, 0.8);
+      }
+
+      .case-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: auto;
+      }
+
+      .case-action {
+        display: inline-flex;
+        min-height: 44px;
+        align-items: center;
+        justify-content: center;
+        padding: 0 14px;
+        border: 2px solid var(--ink);
+        border-radius: 999px;
+        background: var(--ink);
+        color: var(--archive-yellow);
+        font-weight: 900;
+        text-transform: uppercase;
+        transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease, color 180ms ease;
+      }
+
+      .case-action:hover {
+        background: var(--archive-yellow);
+        color: var(--ink);
+        box-shadow: 5px 5px 0 var(--ink);
+        transform: translate(-2px, -2px);
+      }
+
+      .case-action--light {
+        background: var(--paper);
+        color: var(--ink);
+      }
+
+      .case-media {
+        display: grid;
+        gap: 12px;
+        min-width: 0;
+      }
+
+      .case-media__hero {
+        position: relative;
+        margin: 0;
+        border: 3px solid var(--ink);
+        border-radius: var(--radius);
+        background: var(--ink);
+        overflow: hidden;
+      }
+
+      .case-media__hero img {
+        width: 100%;
+        height: 100%;
+        min-height: 360px;
+        max-height: 580px;
+        object-fit: cover;
+      }
+
+      .case-media__hero a,
+      .case-preview-grid a {
+        display: block;
+        color: inherit;
+        cursor: zoom-in;
+      }
+
+      .case-media__hero a {
+        height: 100%;
+      }
+
+      .case-media__hero figcaption {
+        position: absolute;
+        right: 12px;
+        bottom: 12px;
+        left: 12px;
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 10px 12px;
+        border: 2px solid var(--ink);
+        background: var(--archive-yellow);
+        font-weight: 900;
+      }
+
+      .case-preview-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(112px, 1fr));
+        gap: 8px;
+      }
+
+      .case-asset-wall {
+        display: grid;
+        gap: 16px;
+        margin-top: 4px;
+      }
+
+      .asset-top-row,
+      .asset-bottom-row {
+        display: grid;
+        gap: 14px;
+        align-items: start;
+      }
+
+      .asset-top-row {
+        grid-template-columns: minmax(0, 1fr) minmax(230px, 0.34fr);
+      }
+
+      .asset-bottom-row {
+        grid-template-columns: minmax(0, 1fr) minmax(260px, 0.34fr);
+        align-items: stretch;
+      }
+
+      .asset-group {
+        display: grid;
+        gap: 8px;
+      }
+
+      .asset-group__title {
+        display: flex;
+        height: 38px;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 0 11px;
+        border: 2px solid var(--ink);
+        background: var(--ink);
+        color: var(--archive-yellow);
+        font-size: 12px;
+        font-weight: 900;
+        line-height: 1;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .asset-group__title span {
+        white-space: nowrap;
+      }
+
+      .asset-grid {
+        display: grid;
+        gap: 8px;
+      }
+
+      .asset-grid--story {
+        grid-template-columns: 1fr;
+      }
+
+      .asset-grid--keyframes {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .asset-group--keyframes {
+        align-content: stretch;
+        grid-template-rows: auto minmax(0, 1fr);
+      }
+
+      .asset-group--keyframes .asset-grid--keyframes {
+        height: 100%;
+      }
+
+      .asset-grid--keyframes .preview-card {
+        display: grid;
+        grid-template-rows: minmax(0, 1fr) 36px;
+      }
+
+      .benben-case .asset-grid--story {
+        grid-template-columns: minmax(0, 1.25fr) repeat(2, minmax(0, 0.72fr));
+        grid-template-areas:
+          "world leader soldier"
+          "world raider resource";
+        min-height: 520px;
+        align-items: stretch;
+      }
+
+      .benben-case .asset-grid--keyframes {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+      }
+
+      .benben-case .asset-top-row {
+        grid-template-columns: 1fr;
+      }
+
+      .benben-case .asset-bottom-row {
+        grid-template-columns: minmax(0, 1fr) minmax(320px, 0.28fr);
+        align-items: stretch;
+      }
+
+      .benben-case .asset-grid--story .preview-card {
+        display: grid;
+        min-height: 0;
+        grid-template-rows: minmax(0, 1fr) auto;
+      }
+
+      .benben-case .asset-grid--story .preview-card:nth-child(1) {
+        grid-area: leader;
+      }
+
+      .benben-case .asset-grid--story .preview-card:nth-child(2) {
+        grid-area: soldier;
+      }
+
+      .benben-case .asset-grid--story .preview-card:nth-child(3) {
+        grid-area: raider;
+      }
+
+      .benben-case .asset-grid--story .preview-card:nth-child(4) {
+        grid-area: resource;
+      }
+
+      .benben-case .asset-grid--story .preview-card:nth-child(5) {
+        grid-area: world;
+      }
+
+      .benben-case .asset-grid--story .preview-card img {
+        height: 100%;
+        aspect-ratio: auto;
+      }
+
+      .benben-case .asset-group--video {
+        grid-template-rows: auto minmax(0, 1fr);
+      }
+
+      .asset-bottom-row .asset-group--video {
+        grid-template-rows: auto minmax(0, 1fr);
+      }
+
+      .asset-bottom-row .asset-group--video .case-video-strip {
+        height: 100%;
+        grid-template-columns: 1fr;
+        grid-template-rows: minmax(0, 1fr) auto;
+        align-content: stretch;
+      }
+
+      .asset-bottom-row .asset-group--video .case-video-strip video {
+        max-height: none;
+        height: 100%;
+        min-height: 0;
+      }
+
+      .asset-bottom-row .asset-group--video .case-video-strip div {
+        justify-content: flex-start;
+      }
+
+      .benben-case .asset-group--video .case-video-strip {
+        height: 100%;
+        grid-template-columns: 1fr;
+        grid-template-rows: minmax(0, 1fr) auto;
+        align-content: stretch;
+      }
+
+      .benben-case .asset-group--video .case-video-strip video {
+        max-height: none;
+        height: 100%;
+        min-height: 0;
+      }
+
+      .benben-case .asset-group--video .case-video-strip div {
+        justify-content: flex-start;
+      }
+
+      .preview-card {
+        border: 2px solid var(--ink);
+        background: var(--paper);
+        overflow: hidden;
+        transition: transform 180ms ease, box-shadow 180ms ease;
+      }
+
+      .preview-card img {
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        background: var(--ink);
+        object-fit: cover;
+      }
+
+      .asset-grid--keyframes .preview-card img {
+        aspect-ratio: 9 / 12;
+        height: 100%;
+        min-height: 0;
+      }
+
+      .asset-grid--keyframes .preview-card span {
+        display: flex;
+        min-height: 0;
+        height: 36px;
+        align-items: center;
+        padding: 0 8px;
+        line-height: 1;
+      }
+
+      .asset-top-row .asset-group--collection .preview-card img {
+        aspect-ratio: 16 / 8.7;
+      }
+
+      .asset-top-row .asset-group--story .preview-card img {
+        aspect-ratio: 16 / 8.7;
+      }
+
+      .preview-card span {
+        display: block;
+        min-height: 34px;
+        padding: 7px 8px;
+        border-top: 2px solid var(--ink);
+        font-size: 12px;
+        font-weight: 900;
+        line-height: 1.05;
+      }
+
+      .preview-card:hover {
+        box-shadow: 5px 5px 0 var(--ink);
+        transform: translate(-2px, -2px);
+      }
+
+      .portfolio-lightbox {
+        position: fixed;
+        inset: 0;
+        z-index: 1000;
+        display: none;
+        grid-template-rows: auto minmax(0, 1fr);
+        gap: 14px;
+        padding: clamp(14px, 3vw, 28px);
+        background: rgba(33, 33, 33, 0.92);
+      }
+
+      .portfolio-lightbox.is-open {
+        display: grid;
+      }
+
+      .portfolio-lightbox__bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+        color: var(--archive-yellow);
+        font-weight: 900;
+      }
+
+      .portfolio-lightbox__bar button {
+        min-height: 40px;
+        padding: 0 14px;
+        border: 2px solid var(--archive-yellow);
+        border-radius: 999px;
+        background: var(--archive-yellow);
+        color: var(--ink);
+        font: inherit;
+        cursor: pointer;
+      }
+
+      .portfolio-lightbox__frame {
+        display: grid;
+        min-height: 0;
+        place-items: center;
+        border: 3px solid var(--archive-yellow);
+        background: #111111;
+      }
+
+      .portfolio-lightbox__frame img {
+        max-width: 100%;
+        max-height: calc(100vh - 118px);
+        object-fit: contain;
+      }
+
+      .case-video-strip {
+        display: grid;
+        grid-template-columns: minmax(120px, 0.36fr) minmax(0, 1fr);
+        gap: 10px;
+        padding: 10px;
+        border: 3px solid var(--ink);
+        background: var(--archive-yellow);
+      }
+
+      .case-video-strip video {
+        width: 100%;
+        max-height: 260px;
+        aspect-ratio: 9 / 16;
+        border: 2px solid var(--ink);
+        background: #111111;
+        object-fit: contain;
+      }
+
+      .curated-case--hero .case-video-strip {
+        height: 100%;
+        grid-template-columns: 1fr;
+        align-content: stretch;
+        background: var(--archive-yellow);
+      }
+
+      .curated-case--hero .case-video-strip video {
+        max-height: none;
+        min-height: 520px;
+        height: 100%;
+      }
+
+      .curated-case--hero .case-video-strip div {
+        background: var(--archive-yellow);
+      }
+
+      .case-video-strip div {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        gap: 8px;
+        padding: 10px;
+        border: 2px solid var(--ink);
+        background: var(--paper);
+      }
+
+      .case-video-strip strong {
+        font-family: var(--display);
+        font-size: clamp(28px, 4vw, 52px);
+        line-height: 0.9;
+        text-transform: uppercase;
+      }
+
+      .case-video-strip p {
+        margin: 0;
+        font-weight: 800;
+        line-height: 1.22;
+      }
+
+      .curated-row {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: clamp(16px, 3vw, 28px);
+        align-items: stretch;
+      }
+
+      .curated-case--soon,
+      .curated-commercial {
+        border: 3px solid var(--ink);
+        border-radius: var(--radius);
+        box-shadow: 10px 10px 0 var(--ink);
+        overflow: hidden;
+      }
+
+      .curated-case--soon {
+        display: grid;
+        min-height: 0;
+        grid-template-columns: minmax(280px, 0.42fr) minmax(0, 1fr);
+        background: var(--paper-cool);
+      }
+
+      .soon-visual {
+        position: relative;
+        display: grid;
+        min-height: 250px;
+        place-items: center;
+        border-bottom: 3px solid var(--ink);
+        background:
+          repeating-linear-gradient(135deg, rgba(33, 33, 33, 0.16) 0 2px, transparent 2px 14px),
+          var(--archive-yellow);
+        overflow: hidden;
+      }
+
+      .soon-visual img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        filter: blur(7px) saturate(0.65);
+        opacity: 0.34;
+        object-fit: cover;
+        transform: scale(1.04);
+      }
+
+      .soon-visual span {
+        position: relative;
+        z-index: 1;
+        padding: 10px 14px;
+        border: 3px solid var(--ink);
+        background: var(--paper);
+        font-family: var(--display);
+        font-size: clamp(38px, 5vw, 72px);
+        line-height: 0.9;
+        text-transform: uppercase;
+        transform: rotate(-4deg);
+      }
+
+      .soon-body,
+      .commercial-body {
+        display: grid;
+        gap: 14px;
+        padding: clamp(16px, 3vw, 28px);
+      }
+
+      .soon-body h3,
+      .commercial-body h3 {
+        margin: 0;
+        font-family: var(--display);
+        font-size: clamp(36px, 5vw, 72px);
+        line-height: 0.88;
+        text-transform: uppercase;
+      }
+
+      .soon-body h3 span,
+      .commercial-body h3 span {
+        display: block;
+        margin-top: 8px;
+        font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans SC", sans-serif;
+        font-size: clamp(20px, 2vw, 30px);
+        line-height: 1.08;
+        text-transform: none;
+      }
+
+      .soon-body p,
+      .commercial-body p {
+        margin: 0;
+        color: var(--ink-soft);
+        font-weight: 800;
+        line-height: 1.28;
+      }
+
+      .curated-commercial {
+        display: grid;
+        grid-template-columns: 1fr;
+        background: var(--paper);
+      }
+
+      .commercial-categories {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .commercial-category {
+        display: grid;
+        gap: 8px;
+        min-height: 134px;
+        padding: 12px;
+        border: 2px solid var(--ink);
+        background: var(--paper-cool);
+      }
+
+      .commercial-category:nth-child(2),
+      .commercial-category:nth-child(3) {
+        background: var(--archive-yellow);
+      }
+
+      .commercial-category strong {
+        font-size: clamp(18px, 2vw, 25px);
+        line-height: 1.04;
+      }
+
+      .commercial-gallery {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        padding: clamp(16px, 3vw, 28px);
+        border-left: 3px solid var(--ink);
+        background:
+          linear-gradient(rgba(33, 33, 33, 0.05) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(33, 33, 33, 0.05) 1px, transparent 1px),
+          var(--archive-yellow);
+        background-size: 20px 20px;
+      }
+
+      .material-placeholder {
+        position: relative;
+        display: grid;
+        min-height: 154px;
+        place-items: end start;
+        padding: 12px;
+        border: 2px solid var(--ink);
+        background:
+          linear-gradient(135deg, transparent 0 48%, rgba(33, 33, 33, 0.22) 49% 51%, transparent 52%),
+          var(--paper);
+        font-weight: 900;
+        overflow: hidden;
+      }
+
+      .material-placeholder::before {
+        content: "";
+        position: absolute;
+        top: 14px;
+        right: 14px;
+        width: 46px;
+        height: 46px;
+        border: 2px solid var(--ink);
+        border-radius: 50%;
+        background: var(--paper-cool);
+      }
+
+      .material-placeholder b {
+        position: relative;
+        z-index: 1;
+      }
+
+      .commercial-flow {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        border: 2px solid var(--ink);
+      }
+
+      .commercial-flow span {
+        display: grid;
+        gap: 4px;
+        min-height: 62px;
+        align-content: center;
+        padding: 10px;
+        border-right: 2px solid var(--ink);
+        background: var(--archive-yellow);
+        font-size: 12px;
+        font-weight: 900;
+        line-height: 1.1;
+        text-transform: uppercase;
+      }
+
+      .commercial-flow span:last-child {
+        border-right: 0;
+      }
+
+      .commercial-flow b {
+        font-family: var(--display);
+        font-size: 24px;
+        line-height: 0.9;
+      }
+
+      .event-work-sections {
+        display: grid;
+        gap: 16px;
+        padding: clamp(16px, 3vw, 28px);
+        border-top: 3px solid var(--ink);
+      }
+
+      .event-work-section {
+        display: grid;
+        gap: 12px;
+        padding: clamp(12px, 2vw, 18px);
+        border: 2px solid var(--ink);
+        background: linear-gradient(90deg, rgba(33, 33, 33, 0.045) 1px, transparent 1px), var(--paper-cool);
+        background-size: 22px 100%;
+      }
+
+      .event-work-copy {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr);
+        align-items: end;
+        gap: 8px 14px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid var(--ink);
+      }
+
+      .event-work-copy span {
+        grid-row: 1 / 3;
+        width: fit-content;
+        align-self: start;
+        padding: 7px 10px;
+        border: 2px solid var(--ink);
+        background: var(--ink);
+        color: var(--archive-yellow);
+        font-size: 12px;
+        font-weight: 900;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .event-work-copy strong {
+        font-family: var(--display);
+        font-size: clamp(28px, 3.6vw, 48px);
+        line-height: 0.92;
+        text-transform: uppercase;
+      }
+
+      .event-work-copy p {
+        margin: 0;
+        color: var(--ink-soft);
+        font-weight: 800;
+        line-height: 1.28;
+      }
+
+      .event-work-gallery {
+        display: grid;
+        gap: 10px;
+      }
+
+      .event-work-section--campaign .event-work-gallery,
+      .event-work-section--apparel .event-work-gallery {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+      }
+
+      .event-work-section--onsite .event-work-gallery {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .event-work-card {
+        position: relative;
+        display: grid;
+        grid-template-rows: minmax(0, 1fr) auto;
+        border: 2px solid var(--ink);
+        background: var(--paper);
+        color: inherit;
+        overflow: hidden;
+        transition: transform 180ms ease, box-shadow 180ms ease;
+      }
+
+      .event-work-card:hover {
+        box-shadow: 5px 5px 0 var(--ink);
+        transform: translate(-2px, -2px);
+      }
+
+      .event-work-card img {
+        width: 100%;
+        height: 100%;
+        min-height: 0;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+      }
+
+      .event-work-card--tall img,
+      .event-work-section--campaign .event-work-card img {
+        aspect-ratio: 4 / 5;
+      }
+
+      .event-work-section--apparel .event-work-card img {
+        aspect-ratio: 4 / 3;
+        object-fit: contain;
+        background: var(--paper);
+      }
+
+      .event-work-card--wide {
+        grid-column: span 2;
+      }
+
+      .event-work-card--wide img {
+        aspect-ratio: 16 / 9;
+      }
+
+      .event-work-card b {
+        display: block;
+        min-height: 36px;
+        padding: 8px 9px;
+        border-top: 2px solid var(--ink);
+        background: var(--paper);
+        font-size: 12px;
+        font-weight: 900;
+        line-height: 1.12;
+      }
+
+      .material-system-board {
+        display: grid;
+        position: relative;
+        grid-template-columns: minmax(0, 1.18fr) minmax(250px, 0.72fr);
+        gap: 14px;
+        padding: clamp(10px, 1.8vw, 18px);
+        border: 3px solid var(--ink);
+        background:
+          linear-gradient(90deg, rgba(255, 228, 48, 0.18) 1px, transparent 1px),
+          linear-gradient(rgba(255, 228, 48, 0.12) 1px, transparent 1px),
+          #173f28;
+        background-size: 24px 100%, 100% 24px, auto;
+        box-shadow: inset 0 0 0 6px rgba(247, 246, 238, 0.16);
+      }
+
+      .material-row {
+        display: grid;
+        gap: 14px;
+        align-items: stretch;
+      }
+
+      .material-row--visual {
+        grid-column: 1;
+        grid-template-columns: minmax(0, 1fr) minmax(150px, 0.34fr);
+      }
+
+      .material-row--identity {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+        grid-template-columns: 1fr;
+      }
+
+      .material-card {
+        background: var(--archive-yellow);
+      }
+
+      .material-card b {
+        min-height: 32px;
+        background: var(--archive-yellow);
+      }
+
+      .material-hero {
+        min-height: 360px;
+      }
+
+      .material-hero img {
+        min-height: 360px;
+        object-fit: cover;
+        background: #0b4425;
+      }
+
+      .material-ticket {
+        transform: rotate(1.5deg);
+      }
+
+      .material-ticket img {
+        object-fit: cover;
+        object-position: center;
+        background: #143820;
+      }
+
+      .material-medal img {
+        height: 210px;
+        object-fit: cover;
+        object-position: center;
+        background: #172f22;
+        transform: scale(1.08);
+      }
+
+      .material-badges img {
+        height: 250px;
+        object-fit: contain;
+        padding: 8px;
+        background: #173f28;
+      }
+
+      .material-medal b,
+      .material-badges b,
+      .material-totem-compare .event-work-card b {
+        background: var(--ink);
+        color: var(--archive-yellow);
+      }
+
+      .material-ribbon {
+        grid-column: 1 / -1;
+        justify-self: stretch;
+        transform: rotate(-0.6deg);
+      }
+
+      .material-ribbon img {
+        height: clamp(96px, 9vw, 128px);
+        object-fit: cover;
+        object-position: center;
+        transform: scale(1.34);
+        background: #7a1018;
+      }
+
+      .material-totem-compare {
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: minmax(0, 0.34fr) 58px minmax(0, 0.66fr);
+        gap: 12px;
+        align-items: center;
+        padding: 12px;
+        border: 2px solid var(--ink);
+        background:
+          linear-gradient(90deg, rgba(255, 228, 48, 0.15) 1px, transparent 1px),
+          #111f18;
+        background-size: 18px 100%, auto;
+        color: var(--paper);
+      }
+
+      .material-system-label {
+        grid-column: 1 / -1;
+        display: inline-flex;
+        width: fit-content;
+        min-height: 28px;
+        align-items: center;
+        padding: 0 9px;
+        border: 2px solid var(--ink);
+        background: var(--archive-yellow);
+        color: var(--ink);
+        font-size: 12px;
+        font-weight: 900;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .material-compare-arrow {
+        display: grid;
+        min-height: 42px;
+        place-items: center;
+        border: 2px solid var(--ink);
+        background: var(--archive-yellow);
+        color: var(--ink);
+        font-size: 11px;
+        font-weight: 900;
+        line-height: 1.05;
+        text-align: center;
+      }
+
+      .material-totem-mockup img {
+        height: 250px;
+        object-fit: contain;
+        padding: 10px;
+        background: #173f28;
+        transform: scale(1.08);
+      }
+
+      .material-totem-photo img {
+        height: 250px;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      .profile-card__portrait.is-photo-slot {
+        gap: 10px;
+        min-height: 270px;
+        padding: 22px;
+        background:
+          linear-gradient(135deg, transparent 0 48%, rgba(33, 33, 33, 0.22) 49% 50%, transparent 51%),
+          linear-gradient(45deg, transparent 0 48%, rgba(33, 33, 33, 0.22) 49% 50%, transparent 51%),
+          var(--archive-yellow);
+        font-family: var(--body);
+        font-size: clamp(24px, 3vw, 40px);
+        font-weight: 1000;
+        line-height: 1;
+        text-align: center;
+      }
+
+      .profile-card__portrait.is-photo-slot small {
+        display: block;
+        padding-top: 6px;
+        border-top: 2px solid var(--ink);
+        font-size: 13px;
+        font-weight: 900;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      #experience,
+      #works,
+      #skills,
+      #contact {
+        padding-top: 170px;
+      }
+
+      #experience .section-heading,
+      #skills .section-heading {
+        margin-bottom: 24px;
+      }
+
+      #works .section-heading {
+        margin-bottom: -66px;
+      }
+
+      #contact .contact-label {
+        row-gap: 60px;
+      }
+
+      #profile,
+      #experience,
+      #works,
+      #skills {
+        padding-bottom: 0;
+      }
+
+      #experience .section-heading--split,
+      #contact .contact-label {
+        grid-template-columns: 1fr;
+      }
+
+      #experience .section-heading p,
+      #skills .section-heading p,
+      #contact .contact-label p {
+        display: none;
+      }
+
+      #experience .section-heading h2,
+      #contact .contact-label h2 {
+        max-width: none;
+        white-space: nowrap;
+      }
+
+      #skills .skills-board {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      #skills .skill-group {
+        min-height: 188px;
+        padding: 18px;
+      }
+
+      #skills .skill-group header {
+        align-items: center;
+      }
+
+      #skills .skill-group h3 {
+        font-size: clamp(24px, 2.15vw, 34px);
+        line-height: 1;
+        text-align: right;
+        white-space: nowrap;
+      }
+
+      @media (max-width: 1180px) {
+        .works-map,
+        .curated-case--hero,
+        .curated-case--feature,
+        .asset-top-row,
+        .asset-bottom-row,
+        .curated-row,
+        .curated-commercial {
+          grid-template-columns: 1fr;
+        }
+
+        .commercial-gallery {
+          border-top: 3px solid var(--ink);
+          border-left: 0;
+        }
+
+        .event-work-section--campaign .event-work-gallery,
+        .event-work-section--apparel .event-work-gallery,
+        .event-work-section--onsite .event-work-gallery {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 820px) {
+        .works-map__category li {
+          grid-template-columns: 36px minmax(0, 1fr);
+        }
+
+        .works-map__category em {
+          grid-column: 2;
+          justify-self: start;
+        }
+
+        .curated-case--hero {
+          padding: 16px;
+          box-shadow: 7px 7px 0 var(--ink);
+        }
+
+        .curated-case--feature {
+          padding: 16px;
+          box-shadow: 7px 7px 0 var(--ink);
+        }
+
+        .case-process,
+        .case-preview-grid,
+        .asset-grid--story,
+        .asset-grid--keyframes,
+        .benben-case .asset-grid--story,
+        .benben-case .asset-grid--keyframes,
+        .commercial-categories,
+        .commercial-gallery,
+        .commercial-flow,
+        .event-work-section--campaign .event-work-gallery,
+        .event-work-section--apparel .event-work-gallery,
+        .event-work-section--onsite .event-work-gallery {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .benben-case .asset-grid--story {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          grid-template-areas:
+            "world world"
+            "leader soldier"
+            "raider resource";
+          min-height: auto;
+        }
+
+        .event-work-copy,
+        .curated-case--soon,
+        .material-row--visual,
+        .material-row--identity,
+        .material-system-board,
+        .material-totem-compare {
+          grid-template-columns: 1fr;
+        }
+
+        .event-work-copy span,
+        .material-row--visual,
+        .material-row--identity,
+        .material-ribbon,
+        .material-totem-compare {
+          grid-column: auto;
+          grid-row: auto;
+        }
+
+        .case-video-strip {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 520px) {
+        .case-process,
+        .case-preview-grid,
+        .asset-grid--story,
+        .asset-grid--keyframes,
+        .benben-case .asset-grid--story,
+        .benben-case .asset-grid--keyframes,
+        .commercial-categories,
+        .commercial-gallery,
+        .commercial-flow,
+        .event-work-section--campaign .event-work-gallery,
+        .event-work-section--apparel .event-work-gallery,
+        .event-work-section--onsite .event-work-gallery {
+          grid-template-columns: 1fr;
+        }
+
+        .benben-case .asset-grid--story {
+          grid-template-columns: 1fr;
+          grid-template-areas:
+            "world"
+            "leader"
+            "soldier"
+            "raider"
+            "resource";
+        }
+
+        .case-media__hero figcaption {
+          position: static;
+          border-width: 3px 0 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      (function () {
+        const tags01 = [
+          "AIGC广告素材",
+          "SLG买量广告",
+          "关键帧设计",
+          "AI视频生成",
+          "Kling",
+          "Seedance",
+          "剪辑复盘"
+        ];
+        const tags02 = ["SLG买量广告", "中世纪王国", "设定图", "关键帧设计", "AIGC视频", "成片交付"];
+        const commercialTags = [
+          "商业视觉",
+          "活动海报",
+          "宣传物料",
+          "赛事工装",
+          "志愿者马甲",
+          "AI辅助设计",
+          "量产交付"
+        ];
+
+        function tagMarkup(items) {
+          return items.map((item) => `<span>${item}</span>`).join("");
+        }
+
+        function replaceWorks() {
+          const works = document.querySelector("#works");
+          if (!works || works.dataset.curatedWorks === "true") return Boolean(works);
+
+          works.dataset.curatedWorks = "true";
+          works.innerHTML = `
+            <div class="works-curated">
+              <div class="section-heading section-heading--split">
+                <div>
+                  <span class="section-number">03</span>
+                  <h2>Portfolio / Works</h2>
+                </div>
+              </div>
+
+              <div class="works-map" aria-label="Portfolio structure">
+                <article class="works-map__category">
+                  <span>AIGC Game Ads｜游戏广告素材</span>
+                  <h3>Game Ad Materials</h3>
+                  <ol>
+                    <li><b>01</b><strong>冰雪生存 SLG 游戏买量广告素材</strong></li>
+                    <li><b>02</b><strong>王国 SLG 游戏买量广告素材</strong></li>
+                  </ol>
+                </article>
+                <article class="works-map__category">
+                  <span>Commercial Visual & Event Materials</span>
+                  <h3>Commercial Archive</h3>
+                  <ol>
+                    <li><b>03</b><strong>商业视觉 / 海报 / 宣传服装 / 赛事物料</strong><em>项目合集</em></li>
+                  </ol>
+                </article>
+              </div>
+
+              <article class="curated-case curated-case--hero" id="aigc-game-ad-01">
+                <div class="case-copy">
+                  <div class="case-topline">
+                    <span class="case-status">SLG 广告片素材 01</span>
+                    <span class="case-label">AIGC Game Ads</span>
+                  </div>
+                  <h3 class="case-title">Frozen Wasteland<span>冰雪生存 SLG 游戏买量广告素材</span></h3>
+                  <p class="case-intro">AIGC 游戏广告买量素材案例，覆盖创意策划、分镜脚本、关键帧设计、AI 视频生成、剪辑复盘、旁白字幕设计和素材迭代问题处理。</p>
+                  <div class="case-tags">${tagMarkup(tags01)}</div>
+                  <div class="case-process" aria-label="Production process">
+                    <span>创意策划<br>Hook & Rhythm</span>
+                    <span>分镜脚本<br>Storyboard</span>
+                    <span>关键帧设计<br>Keyframes</span>
+                    <span>AI视频生成<br>Kling / Seedance</span>
+                    <span>剪辑复盘<br>Edit Review</span>
+                    <span>旁白字幕<br>Voice & Captions</span>
+                    <span>问题处理<br>Iteration</span>
+                    <span>素材包装<br>Delivery</span>
+                  </div>
+
+                  <div class="case-asset-wall" id="aigc-case-media">
+                    <div class="asset-top-row">
+                      <div class="asset-group asset-group--collection">
+                        <div class="asset-group__title"><span>集合总览</span><span>Collection Board</span></div>
+                        <a class="preview-card js-lightbox" href="portfolio/frozen-wasteland/collection.png" data-title="集合总结图｜冰雪生存 SLG 买量广告">
+                          <img src="portfolio/frozen-wasteland/collection.png" alt="冰雪生存 SLG 买量广告集合总结图" loading="eager" />
+                          <span>集合总结图｜世界观 / 资产 / 关键帧 / 成片方向</span>
+                        </a>
+                      </div>
+
+                      <div class="asset-group asset-group--story">
+                        <div class="asset-group__title"><span>设定图</span><span>3 Images</span></div>
+                        <div class="asset-grid asset-grid--story">
+                          <a class="preview-card js-lightbox" href="portfolio/frozen-wasteland/story/protagonist.png" data-title="故事设定 01｜主角设定"><img src="portfolio/frozen-wasteland/story/protagonist.png" alt="主角设定图" loading="lazy" /><span>故事设定 01｜主角</span></a>
+                          <a class="preview-card js-lightbox" href="portfolio/frozen-wasteland/story/architecture.png" data-title="故事设定 02｜建筑设定"><img src="portfolio/frozen-wasteland/story/architecture.png" alt="建筑设定图" loading="lazy" /><span>故事设定 02｜建筑</span></a>
+                          <a class="preview-card js-lightbox" href="portfolio/frozen-wasteland/story/enemy-faction.png" data-title="故事设定 03｜敌对阵营"><img src="portfolio/frozen-wasteland/story/enemy-faction.png" alt="敌对阵营设定图" loading="lazy" /><span>故事设定 03｜敌方</span></a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="asset-bottom-row">
+                      <div class="asset-group asset-group--keyframes">
+                        <div class="asset-group__title"><span>关键帧</span><span>2 × 4 Sequence</span></div>
+                        <div class="asset-grid asset-grid--keyframes">
+                          <a class="preview-card js-lightbox" href="portfolio/frozen-wasteland/keyframes/01.png" data-title="关键帧 01｜开局危机"><img src="portfolio/frozen-wasteland/keyframes/01.png" alt="开局危机关键帧" loading="lazy" /><span>01｜开局危机</span></a>
+                          <a class="preview-card js-lightbox" href="portfolio/frozen-wasteland/keyframes/02.png" data-title="关键帧 02｜火种生存"><img src="portfolio/frozen-wasteland/keyframes/02.png" alt="火种生存关键帧" loading="lazy" /><span>02｜火种生存</span></a>
+                          <a class="preview-card js-lightbox" href="portfolio/frozen-wasteland/keyframes/03.png" data-title="关键帧 03｜资源建设"><img src="portfolio/frozen-wasteland/keyframes/03.png" alt="资源建设关键帧" loading="lazy" /><span>03｜资源建设</span></a>
+                          <a class="preview-card js-lightbox" href="portfolio/frozen-wasteland/keyframes/04.png" data-title="关键帧 04｜营地成型"><img src="portfolio/frozen-wasteland/keyframes/04.png" alt="营地成型关键帧" loading="lazy" /><span>04｜营地成型</span></a>
+                          <a class="preview-card js-lightbox" href="portfolio/frozen-wasteland/keyframes/05.png" data-title="关键帧 05｜防线升级"><img src="portfolio/frozen-wasteland/keyframes/05.png" alt="防线升级关键帧" loading="lazy" /><span>05｜防线升级</span></a>
+                          <a class="preview-card js-lightbox" href="portfolio/frozen-wasteland/keyframes/06.png" data-title="关键帧 06｜敌军逼近"><img src="portfolio/frozen-wasteland/keyframes/06.png" alt="敌军逼近关键帧" loading="lazy" /><span>06｜敌军逼近</span></a>
+                          <a class="preview-card js-lightbox" href="portfolio/frozen-wasteland/keyframes/07.png" data-title="关键帧 07｜攻城防守"><img src="portfolio/frozen-wasteland/keyframes/07.png" alt="攻城防守关键帧" loading="lazy" /><span>07｜攻城防守</span></a>
+                          <a class="preview-card js-lightbox" href="portfolio/frozen-wasteland/keyframes/08.png" data-title="关键帧 08｜结尾悬念"><img src="portfolio/frozen-wasteland/keyframes/08.png" alt="结尾悬念关键帧" loading="lazy" /><span>08｜结尾悬念</span></a>
+                        </div>
+                      </div>
+
+                      <div class="asset-group asset-group--video">
+                        <div class="asset-group__title"><span>成品视频</span><span>Final Video</span></div>
+                        <div class="case-video-strip">
+                          <video controls preload="metadata" poster="portfolio/frozen-wasteland/collection.png" src="portfolio/frozen-wasteland/final-video.mp4"></video>
+                          <div>
+                            <strong>Final Video</strong>
+                            <p>22s 竖屏买量广告成片，聚焦开局钩子、资源建造、冲突爆发、成长反馈和结尾悬念。</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="case-actions">
+                    <a class="case-action" href="portfolio/frozen-wasteland/final-video.mp4">查看视频预览</a>
+                    <a class="case-action case-action--light" href="#aigc-case-media">查看案例结构</a>
+                  </div>
+                </div>
+              </article>
+
+              <div class="curated-row">
+                <article class="curated-case curated-case--feature benben-case" id="aigc-game-ad-02">
+                  <div class="case-copy">
+                    <div class="case-topline">
+                      <span class="case-status">SLG 广告片素材 02</span>
+                      <span class="case-label">Kingdom Concept Collection</span>
+                    </div>
+                    <h3 class="case-title">Kingdom Concept SLG<span>王国 SLG 游戏买量广告素材</span></h3>
+                    <p class="case-intro">这支买量广告素材围绕中世纪王国从被掠夺、追击敌方、夺回资源到建造王城的成长链路展开，重点展示世界观设定、阵营角色、资源道具、关键帧叙事和竖屏成片交付。</p>
+                    <div class="case-tags">${tagMarkup(tags02)}</div>
+
+                    <div class="case-asset-wall" id="benben-case-media">
+                      <div class="asset-top-row">
+                        <div class="asset-group asset-group--collection">
+                          <div class="asset-group__title"><span>集合总览</span><span>Collection Board</span></div>
+                          <a class="preview-card js-lightbox" href="assets/works/benben-slg/collection-overview.png" data-title="集合总览｜中世纪王国 SLG 买量广告">
+                            <img src="assets/works/benben-slg/collection-overview.png" alt="中世纪王国 SLG 买量广告集合总览" loading="lazy" />
+                            <span>主题设定集合总览｜世界观 / 角色 / 资源 / 关键帧</span>
+                          </a>
+                        </div>
+
+                        <div class="asset-group asset-group--story">
+                          <div class="asset-group__title"><span>设定图</span><span>5 Images</span></div>
+                          <div class="asset-grid asset-grid--story">
+                            <a class="preview-card js-lightbox" href="assets/works/benben-slg/setting-01.png" data-title="设定图 01｜玩家领主设定"><img src="assets/works/benben-slg/setting-01.png" alt="玩家领主设定图" loading="lazy" /><span>01｜玩家领主设定</span></a>
+                            <a class="preview-card js-lightbox" href="assets/works/benben-slg/setting-02.png" data-title="设定图 02｜蓝方士兵设定"><img src="assets/works/benben-slg/setting-02.png" alt="蓝方士兵设定图" loading="lazy" /><span>02｜蓝方士兵设定</span></a>
+                            <a class="preview-card js-lightbox" href="assets/works/benben-slg/setting-03.png" data-title="设定图 03｜红方掠夺小队"><img src="assets/works/benben-slg/setting-03.png" alt="红方掠夺小队设定图" loading="lazy" /><span>03｜红方掠夺小队</span></a>
+                            <a class="preview-card js-lightbox" href="assets/works/benben-slg/setting-04.png" data-title="设定图 04｜资源道具设定"><img src="assets/works/benben-slg/setting-04.png" alt="资源道具设定图" loading="lazy" /><span>04｜资源道具设定</span></a>
+                            <a class="preview-card js-lightbox" href="assets/works/benben-slg/setting-05.png" data-title="设定图 05｜世界观设定"><img src="assets/works/benben-slg/setting-05.png" alt="世界观设定图" loading="lazy" /><span>05｜世界观设定</span></a>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="asset-bottom-row">
+                        <div class="asset-group asset-group--keyframes">
+                          <div class="asset-group__title"><span>关键帧</span><span>2 × 5 Sequence</span></div>
+                          <div class="asset-grid asset-grid--keyframes">
+                            <a class="preview-card js-lightbox" href="assets/works/benben-slg/keyframe-01.png" data-title="关键帧 01｜领主巡视"><img src="assets/works/benben-slg/keyframe-01.png" alt="领主巡视关键帧" loading="lazy" /><span>01｜领主巡视</span></a>
+                            <a class="preview-card js-lightbox" href="assets/works/benben-slg/keyframe-02.png" data-title="关键帧 02｜敌人潜入"><img src="assets/works/benben-slg/keyframe-02.png" alt="敌人潜入关键帧" loading="lazy" /><span>02｜敌人潜入</span></a>
+                            <a class="preview-card js-lightbox" href="assets/works/benben-slg/keyframe-03.png" data-title="关键帧 03｜资源被盗"><img src="assets/works/benben-slg/keyframe-03.png" alt="资源被盗关键帧" loading="lazy" /><span>03｜资源被盗</span></a>
+                            <a class="preview-card js-lightbox" href="assets/works/benben-slg/keyframe-04.png" data-title="关键帧 04｜追击敌方"><img src="assets/works/benben-slg/keyframe-04.png" alt="追击敌方关键帧" loading="lazy" /><span>04｜追击敌方</span></a>
+                            <a class="preview-card js-lightbox" href="assets/works/benben-slg/keyframe-05.png" data-title="关键帧 05｜建造防线"><img src="assets/works/benben-slg/keyframe-05.png" alt="建造防线关键帧" loading="lazy" /><span>05｜建造防线</span></a>
+                            <a class="preview-card js-lightbox" href="assets/works/benben-slg/keyframe-06.png" data-title="关键帧 06｜城防升级"><img src="assets/works/benben-slg/keyframe-06.png" alt="城防升级关键帧" loading="lazy" /><span>06｜城防升级</span></a>
+                            <a class="preview-card js-lightbox" href="assets/works/benben-slg/keyframe-07.png" data-title="关键帧 07｜二度来袭"><img src="assets/works/benben-slg/keyframe-07.png" alt="二度来袭关键帧" loading="lazy" /><span>07｜二度来袭</span></a>
+                            <a class="preview-card js-lightbox" href="assets/works/benben-slg/keyframe-08.png" data-title="关键帧 08｜击退敌人"><img src="assets/works/benben-slg/keyframe-08.png" alt="击退敌人关键帧" loading="lazy" /><span>08｜击退敌人</span></a>
+                            <a class="preview-card js-lightbox" href="assets/works/benben-slg/keyframe-09.png" data-title="关键帧 09｜建造王城"><img src="assets/works/benben-slg/keyframe-09.png" alt="建造王城关键帧" loading="lazy" /><span>09｜建造王城</span></a>
+                            <a class="preview-card js-lightbox" href="assets/works/benben-slg/keyframe-10.png" data-title="关键帧 10｜繁荣王国"><img src="assets/works/benben-slg/keyframe-10.png" alt="繁荣王国关键帧" loading="lazy" /><span>10｜繁荣王国</span></a>
+                          </div>
+                        </div>
+
+                        <div class="asset-group asset-group--video">
+                          <div class="asset-group__title"><span>成品视频</span><span>Final Video</span></div>
+                          <div class="case-video-strip">
+                            <video controls preload="metadata" poster="assets/works/benben-slg/keyframe-10.png" src="assets/works/benben-slg/final-video.mp4"></video>
+                            <div>
+                              <strong>Final Video</strong>
+                              <p>32s 竖屏 SLG 买量广告成片，聚焦敌人掠夺、资源追回、城防升级、王国扩张和最终繁荣的成长反馈。</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="case-actions">
+                      <a class="case-action" href="assets/works/benben-slg/final-video.mp4">查看视频预览</a>
+                      <a class="case-action case-action--light" href="#benben-case-media">查看案例结构</a>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="curated-commercial" id="commercial-visuals">
+                  <div class="commercial-body">
+                    <div class="case-topline">
+                      <span class="case-status">核心作品 03｜金港汽车文化发展（成都）有限公司工作中部分作品展示</span>
+                      <span class="case-label">Commercial Visual & Event Materials</span>
+                    </div>
+                    <h3>Commercial Visual & Event Materials<span>商业视觉与赛事物料落地</span></h3>
+                    <p>上一家公司期间，我参与马术赛事相关商业视觉、宣传海报、赛事服装、线下物料与现场执行内容，负责赛事商业视觉延展、宣传物料设计、服装与线下物料设计、打样沟通、供应商对接、量产交付及现场落地跟进。</p>
+                    <div class="case-tags">${tagMarkup(commercialTags)}</div>
+                    <div class="commercial-flow" aria-label="Commercial delivery process">
+                      <span><b>01</b>Campaign Visuals</span>
+                      <span><b>02</b>Apparel Design</span>
+                      <span><b>03</b>Offline Materials</span>
+                      <span><b>04</b>On-site Delivery</span>
+                    </div>
+                  </div>
+
+                  <div class="event-work-sections">
+                    <section class="event-work-section event-work-section--campaign">
+                      <div class="event-work-copy">
+                        <span>01 Campaign Visuals</span>
+                        <strong>活动主视觉 / 宣传海报</strong>
+                        <p>展示海报、招商手册封面、赛事宣传海报、策划文本封面等，建立赛事对外传播的第一层视觉识别。</p>
+                      </div>
+                      <div class="event-work-gallery">
+                        <a class="event-work-card js-lightbox event-work-card--tall" href="assets/works/event-materials/event-kv-february.png" data-title="活动主视觉｜二月赛事文本封面"><img src="assets/works/event-materials/event-kv-february.png" alt="活动主视觉二月赛事文本封面" loading="lazy" /><b>二月赛事文本封面</b></a>
+                        <a class="event-work-card js-lightbox event-work-card--tall" href="assets/works/event-materials/event-investment-cover.png" data-title="招商手册封面"><img src="assets/works/event-materials/event-investment-cover.png" alt="招商手册封面" loading="lazy" /><b>招商手册封面</b></a>
+                        <a class="event-work-card js-lightbox event-work-card--tall" href="assets/works/event-materials/event-company-poster.png" data-title="公司宣传海报"><img src="assets/works/event-materials/event-company-poster.png" alt="公司宣传海报" loading="lazy" /><b>公司宣传海报</b></a>
+                        <a class="event-work-card js-lightbox" href="assets/works/event-materials/event-poster-main.jpg" data-title="赛事宣传海报"><img src="assets/works/event-materials/event-poster-main.jpg" alt="赛事宣传海报" loading="lazy" /><b>赛事宣传海报</b></a>
+                        <a class="event-work-card js-lightbox" href="assets/works/event-materials/event-planning-cover.jpg" data-title="马术运动区策划文本封面"><img src="assets/works/event-materials/event-planning-cover.jpg" alt="马术运动区策划文本封面" loading="lazy" /><b>策划文本封面</b></a>
+                      </div>
+                    </section>
+
+                    <section class="event-work-section event-work-section--apparel">
+                      <div class="event-work-copy">
+                        <span>02 Apparel Design</span>
+                        <strong>赛事服装 / 工装设计</strong>
+                        <p>展示赛事工作服长款、短款、打板图，把平面视觉延展到工作人员识别与现场秩序系统。</p>
+                      </div>
+                      <div class="event-work-gallery">
+                        <a class="event-work-card js-lightbox" href="assets/works/event-materials/apparel-long.jpg" data-title="赛事工作服长款"><img src="assets/works/event-materials/apparel-long.jpg" alt="赛事工作服长款" loading="lazy" /><b>工作服长款</b></a>
+                        <a class="event-work-card js-lightbox" href="assets/works/event-materials/apparel-short.png" data-title="赛事工作服短款"><img src="assets/works/event-materials/apparel-short.png" alt="赛事工作服短款" loading="lazy" /><b>工作服短款</b></a>
+                        <a class="event-work-card js-lightbox event-work-card--wide" href="assets/works/event-materials/apparel-pattern.jpg" data-title="赛事工作服打板图"><img src="assets/works/event-materials/apparel-pattern.jpg" alt="赛事工作服打板图" loading="lazy" /><b>服装打板图</b></a>
+                      </div>
+                    </section>
+
+                    <section class="event-work-section event-work-section--materials">
+                      <div class="event-work-copy">
+                        <span>03 Offline Materials</span>
+                        <strong>线下赛事物料系统</strong>
+                        <p>以赛事主视觉为基准，延展至名牌、奖牌、票根、绶带、精神堡垒等线下触点，保证现场视觉识别统一。</p>
+                      </div>
+                      <div class="material-system-board">
+                        <div class="material-row material-row--visual">
+                          <a class="event-work-card js-lightbox material-card material-hero" href="assets/works/event-materials/event-poster-main.jpg" data-title="赛事主视觉横版延展"><img src="assets/works/event-materials/event-poster-main.jpg" alt="赛事主视觉横版延展" loading="lazy" /><b>赛事主视觉横版延展</b></a>
+                          <a class="event-work-card js-lightbox material-card material-ticket" href="assets/works/event-materials/material-ticket.jpg" data-title="赛事物料｜赛事票根"><img src="assets/works/event-materials/material-ticket.jpg" alt="赛事票根" loading="lazy" /><b>赛事票根</b></a>
+                        </div>
+                        <div class="material-row material-row--identity">
+                          <a class="event-work-card js-lightbox material-card material-medal" href="assets/works/event-materials/material-medal.jpg" data-title="赛事物料｜奖牌设计"><img src="assets/works/event-materials/material-medal.jpg" alt="赛事奖牌设计" loading="lazy" /><b>奖牌设计</b></a>
+                          <a class="event-work-card js-lightbox material-card material-badges" href="assets/works/event-materials/material-name-card.jpg" data-title="赛事物料｜名牌系统"><img src="assets/works/event-materials/material-name-card.jpg" alt="赛事名牌系统" loading="lazy" /><b>名牌系统</b></a>
+                        </div>
+                        <a class="event-work-card js-lightbox material-card material-ribbon" href="assets/works/event-materials/material-sash.jpg" data-title="赛事物料｜赛事绶带"><img src="assets/works/event-materials/material-sash.jpg" alt="赛事绶带" loading="lazy" /><b>赛事绶带</b></a>
+                        <div class="material-totem-compare">
+                          <div class="material-system-label">DESIGN MOCKUP → ON-SITE PHOTO</div>
+                          <a class="event-work-card js-lightbox material-card material-totem-mockup" href="assets/works/event-materials/material-totem-render.jpg" data-title="精神堡垒效果图"><img src="assets/works/event-materials/material-totem-render.jpg" alt="精神堡垒效果图" loading="lazy" /><b>精神堡垒效果图</b></a>
+                          <div class="material-compare-arrow">MOCKUP<br />→<br />BUILT</div>
+                          <a class="event-work-card js-lightbox material-card material-totem-photo" href="assets/works/event-materials/material-totem-photo.png" data-title="精神堡垒现场实拍"><img src="assets/works/event-materials/material-totem-photo.png" alt="精神堡垒现场实拍" loading="lazy" /><b>精神堡垒现场实拍</b></a>
+                        </div>
+                      </div>
+                    </section>
+
+                    <section class="event-work-section event-work-section--onsite">
+                      <div class="event-work-copy">
+                        <span>04 On-site Delivery</span>
+                        <strong>现场落地记录</strong>
+                        <p>展示赛事合照和现场直拍图，用真实现场记录证明设计内容完成生产、布置与落地。</p>
+                      </div>
+                      <div class="event-work-gallery">
+                        <a class="event-work-card js-lightbox" href="assets/works/event-materials/onsite-photo-01.jpg" data-title="现场落地记录｜看台区视觉落地"><img src="assets/works/event-materials/onsite-photo-01.jpg" alt="看台区视觉落地" loading="lazy" /><b>看台区视觉落地</b></a>
+                        <a class="event-work-card js-lightbox" href="assets/works/event-materials/onsite-photo-02.jpg" data-title="现场落地记录｜马场动线与障碍区"><img src="assets/works/event-materials/onsite-photo-02.jpg" alt="马场动线与障碍区" loading="lazy" /><b>马场动线与障碍区</b></a>
+                        <a class="event-work-card js-lightbox" href="assets/works/event-materials/onsite-photo-03.png" data-title="现场落地记录｜赛事主视觉门头"><img src="assets/works/event-materials/onsite-photo-03.png" alt="赛事主视觉门头" loading="lazy" /><b>赛事主视觉门头</b></a>
+                        <a class="event-work-card js-lightbox" href="assets/works/event-materials/onsite-photo-04.jpg" data-title="现场落地记录｜场地全景布置"><img src="assets/works/event-materials/onsite-photo-04.jpg" alt="场地全景布置" loading="lazy" /><b>场地全景布置</b></a>
+                        <a class="event-work-card js-lightbox" href="assets/works/event-materials/onsite-maintenance-record.jpg" data-title="现场落地记录｜现场维护记录"><img src="assets/works/event-materials/onsite-maintenance-record.jpg" alt="现场维护记录" loading="lazy" /><b>现场维护记录</b></a>
+                        <a class="event-work-card js-lightbox" href="assets/works/event-materials/onsite-group-photo.png" data-title="现场落地记录｜赛事团队合影"><img src="assets/works/event-materials/onsite-group-photo.png" alt="赛事团队合影" loading="lazy" /><b>赛事团队合影</b></a>
+                      </div>
+                    </section>
+                  </div>
+                </article>
+              </div>
+            </div>
+          `;
+
+          return true;
+        }
+
+        function installLightbox() {
+          if (document.querySelector(".portfolio-lightbox")) return;
+
+          const lightbox = document.createElement("div");
+          lightbox.className = "portfolio-lightbox";
+          lightbox.setAttribute("role", "dialog");
+          lightbox.setAttribute("aria-modal", "true");
+          lightbox.setAttribute("aria-label", "作品图片预览");
+          lightbox.innerHTML = '<div class="portfolio-lightbox__bar"><span></span><button type="button">关闭</button></div><div class="portfolio-lightbox__frame"><img alt="" /></div>';
+          document.body.appendChild(lightbox);
+
+          const title = lightbox.querySelector(".portfolio-lightbox__bar span");
+          const closeButton = lightbox.querySelector("button");
+          const image = lightbox.querySelector("img");
+
+          function close() {
+            lightbox.classList.remove("is-open");
+            image.removeAttribute("src");
+            image.alt = "";
+          }
+
+          document.addEventListener("click", (event) => {
+            const trigger = event.target.closest(".js-lightbox");
+            if (!trigger) return;
+
+            event.preventDefault();
+            const label = trigger.dataset.title || trigger.querySelector("img")?.alt || "作品图片预览";
+            image.src = trigger.getAttribute("href");
+            image.alt = label;
+            title.textContent = label;
+            lightbox.classList.add("is-open");
+          });
+
+          closeButton.addEventListener("click", close);
+          lightbox.addEventListener("click", (event) => {
+            if (event.target === lightbox || event.target.classList.contains("portfolio-lightbox__frame")) close();
+          });
+          document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape" && lightbox.classList.contains("is-open")) close();
+          });
+        }
+
+        function localizeApp() {
+          document.documentElement.lang = "zh-CN";
+          document.title = "何宇航｜AI 游戏广告素材设计作品集 / AI Game Ad Portfolio";
+
+          const navLabels = {
+            HOME: "首页",
+            PROFILE: "个人档案",
+            EXPERIENCE: "项目经历",
+            WORKS: "作品集",
+            SKILLS: "技能标签",
+            CONTACT: "联系方式",
+            RESUME: "简历"
+          };
+          document.querySelectorAll(".nav-link span").forEach((item) => {
+            const key = item.textContent.trim();
+            if (navLabels[key]) item.textContent = navLabels[key];
+          });
+
+          const profile = document.querySelector("#profile");
+          if (profile) {
+            const heading = profile.querySelector(".section-heading h2");
+            if (heading) heading.textContent = "个人档案 / Profile";
+
+            const tab = profile.querySelector(".profile-card__tab");
+            if (tab) tab.textContent = "个人档案 / 何宇航";
+
+            const stamp = profile.querySelector(".profile-card__stamp");
+            if (stamp) stamp.textContent = "档案已确认 / Verified";
+
+            const portrait = profile.querySelector(".profile-card__portrait");
+            if (portrait && portrait.dataset.photoSlot !== "true") {
+              portrait.dataset.photoSlot = "true";
+              portrait.classList.add("is-photo-slot");
+              portrait.removeAttribute("aria-hidden");
+              portrait.setAttribute("aria-label", "个人照片占位");
+              portrait.innerHTML = "<span>个人照片</span><small>Photo Pending</small>";
+            }
+
+            const fieldLabels = {
+              Name: "姓名 / Name",
+              Role: "求职方向 / Role",
+              Location: "所在地 / Location",
+              Focus: "作品重点 / Focus",
+              Email: "邮箱 / Email",
+              Phone: "电话 / Phone"
+            };
+            profile.querySelectorAll(".profile-field span").forEach((item) => {
+              const key = item.textContent.trim();
+              if (fieldLabels[key]) item.textContent = fieldLabels[key];
+            });
+
+            profile.querySelectorAll(".profile-field").forEach((field) => {
+              const label = field.querySelector("span")?.textContent.trim() || "";
+              if (label === "Location" || label.includes("所在地")) field.remove();
+            });
+
+            const note = profile.querySelector(".profile-card__note");
+            if (note) note.textContent = "求职方向：AI 游戏广告创意 / AIGC 广告素材设计";
+          }
+
+          const experienceHeading = document.querySelector("#experience .section-heading h2");
+          if (experienceHeading) experienceHeading.textContent = "项目经历 / Experience";
+          const experienceCopy = document.querySelector("#experience .section-heading p");
+          if (experienceCopy) experienceCopy.textContent = "";
+          const skillsHeading = document.querySelector("#skills .section-heading h2");
+          if (skillsHeading) skillsHeading.textContent = "技能标签 / Skills";
+          const contactHeading = document.querySelector("#contact h2");
+          if (contactHeading) contactHeading.textContent = "联系我 / Contact";
+          const contactCopy = document.querySelector("#contact .contact-label p");
+          if (contactCopy) contactCopy.textContent = "";
+
+          const skillTitles = [
+            "AI图像设计 / AI Image",
+            "AI视频制作 / AI Video",
+            "视觉设计 / Design",
+            "视频剪辑 / Editing",
+            "广告转化逻辑 / Ad Logic",
+            "内容运营 / Content Ops"
+          ];
+          document.querySelectorAll("#skills .skill-group h3").forEach((title, index) => {
+            if (skillTitles[index]) title.textContent = skillTitles[index];
+          });
+
+          document.querySelectorAll(".button, .contact-resume").forEach((button) => {
+            if (button.textContent.trim().includes("Download Resume")) button.lastChild.textContent = "下载简历";
+            if (button.textContent.trim().includes("View Works")) button.lastChild.textContent = "查看作品";
+          });
+        }
+
+        function installStaticFallback() {
+          const root = document.querySelector("#root");
+          if (!root || root.children.length > 0) return;
+
+          root.innerHTML = `
+            <header class="site-header">
+              <a class="brand-lockup" href="#home" aria-label="何宇航作品集首页">
+                <span class="brand-mark">H</span>
+                <span class="brand-text">ARCHIVE</span>
+              </a>
+              <nav class="nav-links" aria-label="页面导航">
+                <a class="nav-link" href="#profile"><span>个人档案</span></a>
+                <a class="nav-link" href="#works"><span>作品集</span></a>
+                <a class="nav-link" href="#contact"><span>联系方式</span></a>
+                <a class="nav-link nav-link--resume" href="resume.pdf"><span>简历</span></a>
+              </nav>
+            </header>
+            <main>
+              <section class="section section--profile" id="profile">
+                <div class="section-heading">
+                  <span class="section-number">01</span>
+                  <h2>个人档案 / Profile</h2>
+                </div>
+                <article class="profile-card">
+                  <div class="profile-card__tab">个人档案 / 何宇航</div>
+                  <div class="profile-card__stamp">档案已确认 / Verified</div>
+                  <div class="profile-card__portrait is-photo-slot" aria-label="个人照片占位"><span>个人照片</span><small>Photo Pending</small></div>
+                  <div class="profile-card__content">
+                    <div class="profile-field"><span>姓名 / Name</span><strong>何宇航</strong></div>
+                    <div class="profile-field"><span>求职方向 / Role</span><strong>AI 游戏广告素材设计 / AIGC 广告素材制作 / 游戏买量素材设计</strong></div>
+                    <div class="profile-field"><span>作品重点 / Focus</span><strong>SLG / 生存类买量广告、AI 关键帧、AI 视频分段生成、素材包装与复盘</strong></div>
+                    <div class="profile-field"><span>邮箱 / Email</span><strong>hyh2107567710@163.com</strong></div>
+                    <div class="profile-field"><span>电话 / Phone</span><strong>15520287683</strong></div>
+                  </div>
+                  <p class="profile-card__note">求职方向：AI 游戏广告创意 / AIGC 广告素材设计</p>
+                </article>
+              </section>
+              <section class="section section--works" id="works"></section>
+              <section class="section section--contact" id="contact">
+                <div class="contact-label">
+                  <span class="section-number">05</span>
+                  <h2>联系我 / Contact</h2>
+                  <p>Contact file for 何宇航. Send a brief, collaboration note, or portfolio request.</p>
+                  <div class="contact-grid">
+                    <a class="contact-row" href="mailto:hyh2107567710@163.com"><span>Email</span><strong>hyh2107567710@163.com</strong></a>
+                    <a class="contact-row" href="tel:15520287683"><span>Phone</span><strong>15520287683</strong></a>
+                    <a class="contact-row" href="resume.pdf"><span>Resume</span><strong>Download PDF resume</strong></a>
+                  </div>
+                </div>
+              </section>
+            </main>
+          `;
+
+          installLightbox();
+          replaceWorks();
+          localizeApp();
+        }
+
+        function boot() {
+          installLightbox();
+          if (replaceWorks()) {
+            localizeApp();
+            return;
+          }
+          const observer = new MutationObserver(() => {
+            if (replaceWorks()) {
+              localizeApp();
+              observer.disconnect();
+            }
+          });
+          observer.observe(document.documentElement, { childList: true, subtree: true });
+          window.setTimeout(installStaticFallback, 2000);
+          window.setTimeout(() => observer.disconnect(), 8000);
+        }
+
+        boot();
+      })();
+    </script>
+  </body>
+</html>
