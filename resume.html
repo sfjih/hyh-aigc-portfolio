@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>何宇航｜AI 游戏广告创意 / AIGC 广告素材设计简历</title>
+    <style>
+      @page {
+        size: A4;
+        margin: 8mm;
+      }
+
+      :root {
+        --yellow: #ffe430;
+        --ink: #212121;
+        --paper: #f7f6ee;
+        --cool: #e9eef0;
+        --muted: rgba(33, 33, 33, 0.68);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        font-family: Bahnschrift, "Microsoft YaHei", "PingFang SC", "Noto Sans SC", "Segoe UI", sans-serif;
+        background: var(--paper);
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .page {
+        min-height: calc(297mm - 16mm);
+        padding: 8mm;
+        border: 3px solid var(--ink);
+        background:
+          linear-gradient(rgba(33, 33, 33, 0.035) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(33, 33, 33, 0.035) 1px, transparent 1px),
+          var(--paper);
+        background-size: 18px 18px;
+      }
+
+      header {
+        display: grid;
+        grid-template-columns: 31mm minmax(0, 1fr) 46mm;
+        gap: 6mm;
+        align-items: stretch;
+        padding-bottom: 5mm;
+        border-bottom: 3px solid var(--ink);
+      }
+
+      .portrait {
+        border: 3px solid var(--ink);
+        background: white;
+        overflow: hidden;
+      }
+
+      .portrait img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 31%;
+      }
+
+      .identity {
+        display: grid;
+        align-content: space-between;
+      }
+
+      .kicker,
+      .tag,
+      .section-title,
+      .meta span,
+      .item-date {
+        font-size: 8px;
+        font-weight: 900;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .kicker,
+      .section-title {
+        width: fit-content;
+        padding: 3px 6px;
+        border: 2px solid var(--ink);
+        background: var(--ink);
+        color: var(--yellow);
+      }
+
+      h1 {
+        margin: 3mm 0 0;
+        font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+        font-size: 37px;
+        line-height: 0.9;
+        letter-spacing: 0;
+      }
+
+      .role {
+        margin: 2mm 0 0;
+        font-size: 14px;
+        font-weight: 900;
+      }
+
+      .focus {
+        margin: 2mm 0 0;
+        font-size: 9.5px;
+        font-weight: 800;
+        line-height: 1.32;
+      }
+
+      .meta {
+        display: grid;
+        align-content: end;
+        border-left: 3px solid var(--ink);
+        padding-left: 4mm;
+        gap: 2mm;
+      }
+
+      .meta div {
+        padding-bottom: 2mm;
+        border-bottom: 2px solid var(--ink);
+      }
+
+      .meta strong {
+        display: block;
+        margin-top: 1mm;
+        font-size: 10px;
+        line-height: 1.2;
+        overflow-wrap: anywhere;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
+        gap: 5mm;
+        margin-top: 5mm;
+      }
+
+      section {
+        display: grid;
+        gap: 3mm;
+        margin-bottom: 4mm;
+      }
+
+      .block {
+        border: 2px solid var(--ink);
+        background: rgba(255, 255, 255, 0.54);
+      }
+
+      .block-head {
+        display: flex;
+        justify-content: space-between;
+        gap: 3mm;
+        align-items: baseline;
+        padding: 3mm;
+        border-bottom: 2px solid var(--ink);
+        background: var(--yellow);
+      }
+
+      .block-head h2,
+      .item-title {
+        margin: 0;
+        font-size: 13px;
+        font-weight: 1000;
+        line-height: 1.12;
+      }
+
+      .block-body {
+        padding: 3mm;
+      }
+
+      p {
+        margin: 0;
+        font-size: 9.2px;
+        line-height: 1.42;
+        font-weight: 700;
+      }
+
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5mm;
+      }
+
+      .tag {
+        display: inline-flex;
+        min-height: 6mm;
+        align-items: center;
+        padding: 0 2.5mm;
+        border: 1.6px solid var(--ink);
+        border-radius: 999px;
+        background: var(--cool);
+      }
+
+      .item {
+        padding: 3mm 0;
+        border-bottom: 2px solid var(--ink);
+      }
+
+      .item:first-child {
+        padding-top: 0;
+      }
+
+      .item:last-child {
+        border-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      .item-top {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 3mm;
+        align-items: baseline;
+        margin-bottom: 1.5mm;
+      }
+
+      .item-date {
+        color: var(--muted);
+        white-space: nowrap;
+      }
+
+      .org {
+        display: block;
+        margin-bottom: 1.5mm;
+        color: var(--muted);
+        font-size: 8.5px;
+        font-weight: 900;
+      }
+
+      ul {
+        margin: 1.6mm 0 0;
+        padding-left: 4.5mm;
+      }
+
+      li {
+        margin: 0 0 1.1mm;
+        font-size: 8.6px;
+        line-height: 1.34;
+        font-weight: 700;
+      }
+
+      .highlight {
+        border: 2px solid var(--ink);
+        background: var(--yellow);
+        padding: 3mm;
+      }
+
+      .footer {
+        display: flex;
+        justify-content: space-between;
+        gap: 4mm;
+        margin-top: 3mm;
+        padding-top: 3mm;
+        border-top: 3px solid var(--ink);
+        font-size: 8px;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <header>
+        <div class="portrait">
+          <img src="assets/profile/he-yuhang-headshot.jpg" alt="何宇航证件照" />
+        </div>
+        <div class="identity">
+          <div>
+            <span class="kicker">AI Game Ad Materials / Resume Archive</span>
+            <h1>何宇航 HYH</h1>
+            <div class="role">AI游戏广告创意/AIGC广告素材设计</div>
+          </div>
+          <p class="focus">聚焦 SLG 游戏买量素材、AI 游戏广告创意、关键帧设计、脚本拆解、分镜、AI 生图、AI 视频生成、素材迭代复盘、视觉包装与设计运营。</p>
+        </div>
+        <div class="meta">
+          <div><span>Email</span><strong>hyh2107567710@163.com</strong></div>
+          <div><span>Phone</span><strong>15520287683</strong></div>
+          <div><span>Portfolio</span><strong>sfjih.github.io/hyh-aigc-portfolio/</strong></div>
+        </div>
+      </header>
+
+      <div class="grid">
+        <div>
+          <section>
+            <span class="section-title">Profile</span>
+            <div class="highlight">
+              <p>环境设计本科背景，具备画面信息层级、冷暖对比、视觉钩子、主 KV 延展与提案级排版能力。当前求职方向为 AI 游戏广告创意 / AIGC 广告素材设计，作品重点覆盖 SLG / 生存类买量广告、AI 关键帧、AI 视频分段生成、素材包装与复盘。</p>
+            </div>
+          </section>
+
+          <section>
+            <span class="section-title">Skills</span>
+            <div class="block">
+              <div class="block-body chips">
+                <span class="tag">ChatGPT</span>
+                <span class="tag">Midjourney / 即梦</span>
+                <span class="tag">Kling</span>
+                <span class="tag">Seedance</span>
+                <span class="tag">AI 生图</span>
+                <span class="tag">AI 视频生成</span>
+                <span class="tag">关键帧设计</span>
+                <span class="tag">脚本拆解</span>
+                <span class="tag">分镜</span>
+                <span class="tag">剪辑复盘</span>
+                <span class="tag">视觉包装</span>
+                <span class="tag">跨部门协作</span>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <span class="section-title">Education</span>
+            <div class="block">
+              <div class="block-body">
+                <div class="item">
+                  <div class="item-top">
+                    <h2 class="item-title">环境设计本科背景</h2>
+                    <span class="item-date">2019.09 - 2023.07</span>
+                  </div>
+                  <span class="org">河南农业大学</span>
+                  <p>学习空间、视觉和叙事表达，形成对构图、层级、色彩与信息组织的基础判断，并迁移到广告画面、场景资产、关键帧和宣传物料包装中。</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <span class="section-title">Portfolio</span>
+            <div class="block">
+              <div class="block-body">
+                <p><strong>作品集网页：</strong>包含冰雪生存 SLG 游戏买量广告素材、王国 SLG 游戏买量广告素材、商业视觉 / 海报 / 宣传服装 / 赛事物料项目合集。</p>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div>
+          <section>
+            <span class="section-title">Experience</span>
+            <div class="block">
+              <div class="block-body">
+                <div class="item">
+                  <div class="item-top">
+                    <h2 class="item-title">SLG 游戏买量素材制作</h2>
+                    <span class="item-date">2026.05 - 至今</span>
+                  </div>
+                  <span class="org">AIGC 作品集</span>
+                  <p>围绕 SLG 游戏买量广告方向，独立完成多组素材案例与视觉资产设计，覆盖创意切入、脚本拆解、关键帧设计、AI 生图/视频生成、素材迭代复盘与作品集网页呈现。</p>
+                  <ul>
+                    <li>拆解 SLG 买量广告中的危机、建设、升级、防守、反击等核心转化结构。</li>
+                    <li>完成多组 SLG 广告关键帧、设定图、分镜脚本与 AI 视频素材测试。</li>
+                    <li>使用 ChatGPT、Midjourney / 即梦、Kling、Seedance 等 AI 工具完成提示词、画面生成与视频迭代。</li>
+                    <li>通过线上作品集呈现项目目标、制作流程、问题复盘与岗位匹配能力。</li>
+                  </ul>
+                </div>
+
+                <div class="item">
+                  <div class="item-top">
+                    <h2 class="item-title">设计运营 / AI 辅助视觉落地</h2>
+                    <span class="item-date">2024.03 - 2026.03</span>
+                  </div>
+                  <span class="org">金港汽车文化产业发展（成都）有限公司</span>
+                  <p>负责赛事视觉、宣传物料、内容素材协同、G 端汇报材料与跨部门项目推进。</p>
+                  <ul>
+                    <li>使用悠船 AI / Midjourney 国内版完成需求分析、提示词撰写、AI 出图、设计包装、打样沟通到量产交付。</li>
+                    <li>15 天内推进赛事工装及志愿者马甲 200 余件成品交付。</li>
+                    <li>统筹赛事图片 / 视频素材整理、推文素材调用和发布前流转，支持公众号、品牌展示和活动复盘。</li>
+                  </ul>
+                </div>
+
+                <div class="item">
+                  <div class="item-top">
+                    <h2 class="item-title">金骑士杯成都马术超级联赛</h2>
+                    <span class="item-date">2025.07 - 2026.03</span>
+                  </div>
+                  <span class="org">设计 / 内容 / 执行</span>
+                  <p>赛事规划 6 站，已执行 4 站；参与赛事视觉设计、内容素材管理、现场执行和多方协作。</p>
+                  <ul>
+                    <li>负责赛事工装、志愿者马甲等物料设计，并推进至工厂量产。</li>
+                    <li>参与摄影团队对接、拍摄需求沟通、图片 / 视频素材归档及推文调用。</li>
+                    <li>使用无人机进行场地航拍记录，整理工作日志与现场资料，支持赛事复盘和宣传材料。</li>
+                  </ul>
+                </div>
+
+                <div class="item">
+                  <div class="item-top">
+                    <h2 class="item-title">猎头顾问经历</h2>
+                    <span class="item-date">2023.11 - 2024.03</span>
+                  </div>
+                  <span class="org">成都卓唯企业管理咨询有限公司</span>
+                  <p>通过高频候选人与客户沟通，建立需求澄清、职业化表达和结果导向意识；独立完成候选人全流程跟进，成交 1 个猎头 case。</p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <div class="footer">
+        <span>HYH-2026 / AI AD RESUME</span>
+        <span>Public portfolio materials have been organized for display use.</span>
+      </div>
+    </main>
+  </body>
+</html>
