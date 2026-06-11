@@ -47,6 +47,19 @@
         background: var(--archive-yellow);
       }
 
+      .works-map--single {
+        grid-template-columns: 1fr;
+      }
+
+      #works .works-curated,
+      #other-works .works-curated {
+        gap: 0;
+      }
+
+      #works .works-map {
+        margin-top: 0;
+      }
+
       .works-map__category span,
       .case-status,
       .case-label,
@@ -1210,6 +1223,7 @@
 
       #experience,
       #works,
+      #other-works,
       #skills,
       #contact {
         padding-top: 170px;
@@ -1220,8 +1234,18 @@
         margin-bottom: 24px;
       }
 
-      #works .section-heading {
-        margin-bottom: -66px;
+      #works .section-heading,
+      #other-works .section-heading {
+        margin-bottom: 0;
+      }
+
+      #other-works .section-heading--split {
+        grid-template-columns: 1fr;
+      }
+
+      #other-works .section-heading h2 {
+        max-width: none;
+        white-space: nowrap;
       }
 
       #contact .contact-label {
@@ -1231,8 +1255,13 @@
       #profile,
       #experience,
       #works,
+      #other-works,
       #skills {
         padding-bottom: 0;
+      }
+
+      .other-works-panel[hidden] {
+        display: none !important;
       }
 
       #experience .section-heading--split,
@@ -1297,6 +1326,11 @@
       }
 
       @media (max-width: 820px) {
+        #works .section-heading,
+        #other-works .section-heading {
+          margin-bottom: 0;
+        }
+
         .works-map__category li {
           grid-template-columns: 36px minmax(0, 1fr);
         }
@@ -1756,6 +1790,112 @@
           return true;
         }
 
+        function syncOtherWorksVisibility() {
+          const panel = document.querySelector("#other-works");
+          if (!panel) return;
+
+          const shouldShow = window.location.hash === "#other-works";
+          panel.hidden = !shouldShow;
+          panel.setAttribute("aria-hidden", String(!shouldShow));
+          document.querySelectorAll('.nav-link[href="#other-works"]').forEach((link) => {
+            if (shouldShow) {
+              link.setAttribute("aria-current", "page");
+            } else {
+              link.removeAttribute("aria-current");
+            }
+          });
+
+          if (shouldShow) {
+            window.requestAnimationFrame(() => panel.scrollIntoView({ block: "start" }));
+          }
+        }
+
+        function ensureOtherWorksNav() {
+          document.querySelectorAll(".site-header .nav-links").forEach((nav) => {
+            if (nav.querySelector('[href="#other-works"]')) return;
+
+            const link = document.createElement("a");
+            link.className = "nav-link";
+            link.href = "#other-works";
+            link.innerHTML = "<span>其他作品 / OTHER WORKS</span>";
+            const contactLink = nav.querySelector('[href="#contact"]');
+            const resumeLink = nav.querySelector(".nav-link--resume");
+            nav.insertBefore(link, contactLink || resumeLink || null);
+          });
+        }
+
+        function installOtherWorks() {
+          const works = document.querySelector("#works");
+          const commercial = document.querySelector("#commercial-visuals");
+          if (!works || !commercial) {
+            ensureOtherWorksNav();
+            syncOtherWorksVisibility();
+            return Boolean(works);
+          }
+
+          works.querySelectorAll(".works-map__category").forEach((category) => {
+            if (category.textContent.includes("Commercial Visual & Event Materials")) category.remove();
+          });
+
+          const worksMap = works.querySelector(".works-map");
+          if (worksMap && worksMap.children.length === 1) worksMap.classList.add("works-map--single");
+
+          let panel = document.querySelector("#other-works");
+          if (!panel) {
+            panel = document.createElement("section");
+            panel.className = "section section--works other-works-panel";
+            panel.id = "other-works";
+            panel.hidden = true;
+            panel.setAttribute("aria-hidden", "true");
+            panel.innerHTML = `
+              <div class="works-curated">
+                <div class="section-heading section-heading--split">
+                  <div>
+                    <span class="section-number">04</span>
+                    <h2>其他作品 / OTHER WORKS</h2>
+                  </div>
+                </div>
+              </div>
+            `;
+
+            const skills = document.querySelector("#skills");
+            if (skills?.parentNode) {
+              skills.parentNode.insertBefore(panel, skills);
+            } else {
+              works.insertAdjacentElement("afterend", panel);
+            }
+          }
+
+          const panelContent = panel.querySelector(".works-curated");
+          if (panelContent && commercial.parentElement !== panelContent) {
+            panelContent.appendChild(commercial);
+          }
+
+          ensureOtherWorksNav();
+          syncOtherWorksVisibility();
+          return true;
+        }
+
+        function installOtherWorksNavigation() {
+          ensureOtherWorksNav();
+          if (document.documentElement.dataset.otherWorksNavInstalled === "true") {
+            syncOtherWorksVisibility();
+            return;
+          }
+
+          document.documentElement.dataset.otherWorksNavInstalled = "true";
+          window.addEventListener("hashchange", () => {
+            installOtherWorks();
+            syncOtherWorksVisibility();
+          });
+          document.addEventListener("click", (event) => {
+            const trigger = event.target.closest?.('a[href="#other-works"]');
+            if (!trigger) return;
+            installOtherWorks();
+          });
+          syncOtherWorksVisibility();
+        }
+
         function installLightbox() {
           if (document.querySelector(".portfolio-lightbox")) return;
 
@@ -1815,6 +1955,7 @@
             const key = item.textContent.trim();
             if (navLabels[key]) item.textContent = navLabels[key];
           });
+          installOtherWorksNavigation();
 
           const profile = document.querySelector("#profile");
           if (profile) {
@@ -1997,17 +2138,20 @@
 
           installLightbox();
           replaceWorks();
+          installOtherWorks();
           localizeApp();
         }
 
         function boot() {
           installLightbox();
           if (replaceWorks()) {
+            installOtherWorks();
             localizeApp();
             return;
           }
           const observer = new MutationObserver(() => {
             if (replaceWorks()) {
+              installOtherWorks();
               localizeApp();
               observer.disconnect();
             }
