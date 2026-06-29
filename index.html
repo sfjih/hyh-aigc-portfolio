@@ -1795,8 +1795,8 @@
           if (!panel) return;
 
           const shouldShow = window.location.hash === "#other-works";
-          panel.hidden = !shouldShow;
-          panel.setAttribute("aria-hidden", String(!shouldShow));
+          panel.hidden = false;
+          panel.setAttribute("aria-hidden", "false");
           document.querySelectorAll('.nav-link[href="#other-works"]').forEach((link) => {
             if (shouldShow) {
               link.setAttribute("aria-current", "page");
@@ -1812,7 +1812,14 @@
 
         function ensureOtherWorksNav() {
           document.querySelectorAll(".site-header .nav-links").forEach((nav) => {
-            if (nav.querySelector('[href="#other-works"]')) return;
+            const skillsLink = nav.querySelector('[href="#skills"]');
+            const existingLink = nav.querySelector('[href="#other-works"]');
+            if (existingLink) {
+              if (skillsLink && existingLink.nextElementSibling !== skillsLink) {
+                nav.insertBefore(existingLink, skillsLink);
+              }
+              return;
+            }
 
             const link = document.createElement("a");
             link.className = "nav-link";
@@ -1820,7 +1827,7 @@
             link.innerHTML = "<span>其他作品 / OTHER WORKS</span>";
             const contactLink = nav.querySelector('[href="#contact"]');
             const resumeLink = nav.querySelector(".nav-link--resume");
-            nav.insertBefore(link, contactLink || resumeLink || null);
+            nav.insertBefore(link, skillsLink || contactLink || resumeLink || null);
           });
         }
 
@@ -1845,8 +1852,8 @@
             panel = document.createElement("section");
             panel.className = "section section--works other-works-panel";
             panel.id = "other-works";
-            panel.hidden = true;
-            panel.setAttribute("aria-hidden", "true");
+            panel.hidden = false;
+            panel.setAttribute("aria-hidden", "false");
             panel.innerHTML = `
               <div class="works-curated">
                 <div class="section-heading section-heading--split">
@@ -2123,7 +2130,7 @@
               <section class="section section--works" id="works"></section>
               <section class="section section--contact" id="contact">
                 <div class="contact-label">
-                  <span class="section-number">05</span>
+                  <span class="section-number">06</span>
                   <h2>联系我 / Contact</h2>
                   <p>Contact file for 何宇航. Send a brief, collaboration note, or portfolio request.</p>
                   <div class="contact-grid">
